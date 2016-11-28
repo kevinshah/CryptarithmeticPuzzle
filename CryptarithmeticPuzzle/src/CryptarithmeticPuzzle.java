@@ -135,7 +135,7 @@ public class CryptarithmeticPuzzle {
 		System.out.println("h1 Length " +firstArr.length); 
 		System.out.println("h2 Length " +secondArr.length); 
 		System.out.println("h3 Length " +resultStringLength); 
-		System.out.println("Longest " +longestString); 
+	 	System.out.println("Longest " +longestString); 
 		
 		//resultString length should be equal to or + 1 the longest inputString
 		if( !(resultStringLength == longestString || resultStringLength == (longestString + 1))){
