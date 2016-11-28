@@ -71,15 +71,9 @@ public class CryptarithmeticPuzzle {
 		}
 		for(int kdx = 0; kdx < resultString.length(); kdx++){
 			resultArr[kdx] = resultString.charAt(kdx);
-			System.out.println("kdx -- "+resultString.charAt(kdx));
 			h3.add(resultString.charAt(kdx));
 		}
-		h3.add('a');
-		h3.add('b');
-		h3.add('b');
-		h3.add('b');
-		h3.add('b');
-
+		
 		StringBuffer commonSB = new StringBuffer();
 		StringBuffer uniqueSB = new StringBuffer();
 
@@ -125,41 +119,25 @@ public class CryptarithmeticPuzzle {
 		System.out.println("Unique:"+uniqueSB.toString().replace(" ", "")); 
 
 		int totalVariableLength = commonSB.length() + uniqueSB.length();
-		int resultStringLength = h3.size();
-		int longestString =0; 
-		if(h1.size() > h2.size()){
-			longestString = h1.size();
+		int resultStringLength = resultArr.length;
+		int longestString = 0; 
+		if(firstArr.length > secondArr.length){
+			longestString = firstArr.length;
 		}else{
-			longestString = h2.size();
+			longestString = secondArr.length;
 		}
-		System.out.println("--------------------"); 
-
-		for(Character i : h1){
-			System.out.println("h1 --->" +i); 
-		}
-		System.out.println("--------------------"); 
-
-		for(Character i : h2){
-			System.out.println("h2 --->" +i); 
-		}
-		System.out.println("--------------------"); 
-
-		for(Character i : h3){
-			System.out.println("h3 --->" +i); 
-		}
-		System.out.println("--------------------"); 
-
+		//Constrains
 		//Max Distinct variable from inputString and resultSring <= 10
 		if(totalVariableLength > 10){
 			System.out.println("Error: There are more than 10 variables."); 
 			System.exit(0);
 		}
-		//resultString length should be equal to or + 1 the longest inputString
-		System.out.println("h1 Length " +h1.size()); 
-		System.out.println("h2 Length " +h2.size()); 
+		System.out.println("h1 Length " +firstArr.length); 
+		System.out.println("h2 Length " +secondArr.length); 
 		System.out.println("h3 Length " +resultStringLength); 
 		System.out.println("Longest " +longestString); 
-
+		
+		//resultString length should be equal to or + 1 the longest inputString
 		if( !(resultStringLength == longestString || resultStringLength == (longestString + 1))){
 			System.out.println("Result String Length Error: There are no results for the given problem. "); 
 			System.exit(0);
